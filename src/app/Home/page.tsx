@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { EyeOff } from "lucide-react";
 import CardService from "../components/CardService";
 import Image from "next/image";
+import NavBar from "../components/NavBar";
 
 
 export default function Home() {
@@ -74,7 +75,10 @@ export default function Home() {
                     path="/"
                 />
             </section>
-            <section className="w-full h-[40%] flex"></section>
+            <section className="w-full h-[30%] flex"></section>
+            <section className="w-full h-[10%] flex justify-center items-center">
+                <NavBar/>
+            </section>
         </main>
     );
 }
