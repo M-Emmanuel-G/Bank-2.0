@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card } from "@/components/ui/card";
 import { EyeOff } from "lucide-react";
 import CardService from "../components/CardService";
 import Image from "next/image";

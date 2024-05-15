@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ChevronRight, Eye } from 'lucide-react'
+import { signIn } from 'next-auth/react'
 import { redirect, useRouter } from 'next/navigation'
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
         </section>
         <section>
           <Button
-          onClick={(()=>{router.push("/Home")})}
+          onClick={(()=>{signIn()})}
             className='w-[340px] h-12 bg-transparent text-black border-2 border-black rounded-xl hover:bg-transparent'
           >Entrar</Button>
         </section>
