@@ -35,9 +35,9 @@ export const authOptions: AuthOptions = {
   //   signIn:"/Login"
   // },
   callbacks: {
-    // async redirect() {
-    //   return "/Home"
-    // },
+    async redirect() {
+      return "/Home"
+    },
 
     session: async ({ session, token }) => {
       if (session?.user) {
@@ -50,7 +50,7 @@ export const authOptions: AuthOptions = {
      jwt: async ({ user, token }) => {
           if (user) {
             token.uid = user.id;
-            token.name = user.last_name
+            token.name = `${user.first_name} ${user.last_name}`
           }
           return token;
         },

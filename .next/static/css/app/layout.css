@@ -693,6 +693,9 @@ video {
   .h-screen {
   height: 100vh;
 }
+  .h-\[90\%\] {
+  height: 90%;
+}
   .w-10 {
   width: 2.5rem;
 }

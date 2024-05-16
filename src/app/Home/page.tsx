@@ -10,8 +10,6 @@ import { authOptions } from "@/lib/auth";
 export default async function Home() {
 
     const session = await getServerSession(authOptions)
-    console.log(session?.user);
-    
 
     return (
         <main className="w-screen h-screen flex flex-col text-white bg-black">
