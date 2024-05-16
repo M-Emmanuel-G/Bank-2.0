@@ -3,9 +3,16 @@ import { EyeOff } from "lucide-react";
 import CardService from "../components/CardService";
 import Image from "next/image";
 import NavBar from "../components/NavBar";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 
-export default function Home() {
+export default async function Home() {
+
+    const session = await getServerSession(authOptions)
+    console.log(session?.user);
+    
+
     return (
         <main className="w-screen h-screen flex flex-col text-white bg-black">
             <header className="w-full h-[10%] flex items-center justify-between">
@@ -18,7 +25,7 @@ export default function Home() {
                         </Avatar>
                     </div>
                     <div className="flex flex-col mx-2">
-                        <span className="text-sm ">Olá Cliente</span>
+                        <span className="text-sm ">Olá, {session?.user?.name}</span>
                         <span className="text-[8px]">Bem vindo de volta</span>
                     </div>
                 </div>
