@@ -1,7 +1,6 @@
 import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { db } from "./prisma";
-import { redirect } from "next/navigation";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -44,19 +43,27 @@ export const authOptions: AuthOptions = {
         session.user.id = token.sub as string
         session.user.first_name = token.firstName as string
         session.user.last_name = token.lastName as string
+        session.user.birth_date = token.birthDate as string
+        session.user.full_address = token.fullAddress as string
+        session.user.phone = token.phone as string
+        session.user.cod_postal = token.codPostal as string
       }
       return session;
     },
+    
      jwt: async ({ user, token }) => {
           if (user) {
             token.uid = user.id;
-            token.name = `${user.first_name} ${user.last_name}`
+            token.name = user.name
+            token.firstName = user.first_name
+            token.lastName = user.last_name
+            token.birthDate = user.birth_date
+            token.fullAddress = user.full_address 
+            token.phone = user.phone
+            token.codPostal = user.cod_postal
           }
           return token;
         },
-      },
-      session: {
-        strategy: 'jwt',
       },
   secret: "sbicpas[cko9028f2-9c2=cj-0u29-2-bu02h-c2",
 };

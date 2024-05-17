@@ -23,7 +23,7 @@ export default async function Home() {
                         </Avatar>
                     </div>
                     <div className="flex flex-col mx-2">
-                        <span className="text-sm ">Olá, {session?.user?.name}</span>
+                        <span className="text-sm ">Olá, {session?.user?.first_name}</span>
                         <span className="text-[8px]">Bem vindo de volta</span>
                     </div>
                 </div>

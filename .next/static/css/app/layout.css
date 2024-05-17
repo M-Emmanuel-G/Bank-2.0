@@ -666,9 +666,6 @@ video {
   .h-40 {
   height: 10rem;
 }
-  .h-7 {
-  height: 1.75rem;
-}
   .h-8 {
   height: 2rem;
 }
@@ -687,14 +684,14 @@ video {
   .h-\[45px\] {
   height: 45px;
 }
+  .h-\[90\%\] {
+  height: 90%;
+}
   .h-full {
   height: 100%;
 }
   .h-screen {
   height: 100vh;
-}
-  .h-\[90\%\] {
-  height: 90%;
 }
   .w-10 {
   width: 2.5rem;
@@ -704,9 +701,6 @@ video {
 }
   .w-40 {
   width: 10rem;
-}
-  .w-8 {
-  width: 2rem;
 }
   .w-80 {
   width: 20rem;
@@ -780,6 +774,9 @@ video {
 }
   .rounded-xl {
   border-radius: 0.75rem;
+}
+  .rounded-2xl {
+  border-radius: 1rem;
 }
   .border {
   border-width: 1px;
@@ -867,6 +864,12 @@ video {
 }
   .text-center {
   text-align: center;
+}
+  .text-start {
+  text-align: start;
+}
+  .text-end {
+  text-align: end;
 }
   .text-2xl {
   font-size: 1.5rem;
