@@ -9,6 +9,7 @@ declare module "next-auth" {
         full_address:string
         cod_postal:string
         phone:string
+        user_name:string
     }
   interface Session {
     user: User & {
@@ -19,6 +20,7 @@ declare module "next-auth" {
       full_address:string
       cod_postal:string
       phone:string,
+      income:number
     } 
     token:{
         id:string
@@ -28,6 +30,7 @@ declare module "next-auth" {
         full_address:string
         cod_postal:string
         phone:string,
+        income:number
     }
   }
 }

@@ -47,6 +47,7 @@ export const authOptions: AuthOptions = {
         session.user.full_address = token.fullAddress as string
         session.user.phone = token.phone as string
         session.user.cod_postal = token.codPostal as string
+        session.user.user_name = token.userName as string
       }
       return session;
     },
@@ -61,6 +62,7 @@ export const authOptions: AuthOptions = {
             token.fullAddress = user.full_address 
             token.phone = user.phone
             token.codPostal = user.cod_postal
+            token.userName = user.user_name
           }
           return token;
         },

@@ -20,30 +20,34 @@ export default async function Profile() {
                         src="https://github.com/shadcn.png"
                         alt=""/>
                 </div>
-                <div>
-                    <div className="text-white flex justify-between">
+                <div className="w-80 h-96 flex flex-col overflow-y-scroll">
+                    <div className="w-full text-white flex flex-col my-2">
                         <strong>Nome completo:</strong>
                         <span>{session?.user.first_name} {session?.user.last_name}</span>
                     </div>
-                    <div className="text-white flex justify-evenly">
+                    <div className="w-full text-white flex flex-col my-2">
                         <strong>Data de Nascimento:</strong>
                         <span>{session?.user.birth_date}</span>
                     </div>
-                    <div className="text-white flex justify-evenly">
+                    <div className="w-full text-white flex flex-col my-2">
                         <strong>Email:</strong>
                         <span>{session?.user.email}</span>
                     </div>
-                    <div className="text-white flex justify-evenly">
+                    <div className="w-full text-white flex flex-col my-2">
                         <strong>Telefone:</strong>
                         <span>{session?.user.phone}</span>
                     </div>
-                    <div className="text-white flex justify-evenly">
+                    <div className="w-full text-white flex flex-col my-2">
                         <strong>Endereço:</strong>
                         <span>{session?.user.full_address} </span>
                     </div>
-                    <div className="text-white flex justify-evenly">
+                    <div className="w-full text-white flex flex-col my-2">
                         <strong>CEP:</strong>
                         <span>{session?.user.cod_postal} </span>
+                    </div>
+                    <div className="w-full text-white flex flex-col my-2">
+                        <strong>Nome de usuário</strong>
+                        <span>{session?.user.user_name}</span>
                     </div>
                 </div>
                </section>
