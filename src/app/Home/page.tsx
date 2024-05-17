@@ -5,11 +5,21 @@ import Image from "next/image";
 import NavBar from "../components/NavBar";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import { db } from "@/lib/prisma";
 
 
 export default async function Home() {
 
     const session = await getServerSession(authOptions)
+
+    const user = await db.clients.findUnique({
+        select:{
+            income:true
+        },
+        where:{
+            id: session?.user.id
+        }
+    })
 
     return (
         <main className="w-screen h-screen flex flex-col text-white bg-black">
@@ -36,7 +46,7 @@ export default async function Home() {
                 <div className="w-96 h-3/4 bg-gray-900 flex justify-between items-center rounded-3xl">
                     <div className=" flex flex-col ml-8">
                         <span className="text-[12px]">Saldo</span>
-                        <span>R$ ****</span>
+                        <span>R$ {Number(user?.income).toFixed(2)}</span>
                     </div>
                     <div className="mr-6">
                         <EyeOff/>
