@@ -36,7 +36,12 @@ export default async function Profile() {
                     </div>
                     <div className="w-1/2 h-full flex flex-col justify-center items-center">
                        <Button>Alterar Imagem</Button>
-                       <EditProfile/>
+                       <EditProfile
+                            client={{
+                                id:String( user?.id),
+                                userName:String(user?.user_name)
+                            }}
+                       />
                     </div>
                 </section>
 
