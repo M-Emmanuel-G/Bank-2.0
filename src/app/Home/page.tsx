@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
+import Header from "../components/Header/header";
 
 
 export default async function Home() {
@@ -23,23 +24,8 @@ export default async function Home() {
 
     return (
         <main className="w-screen h-screen flex flex-col text-white bg-black">
-            <header className="w-full h-[10%] flex items-center justify-between">
-                <div></div>
-                <div className="flex">
-                    <div>
-                        <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png" />
-                            <AvatarFallback>CN</AvatarFallback>
-                        </Avatar>
-                    </div>
-                    <div className="flex flex-col mx-2">
-                        <span className="text-sm ">Olá, {session?.user?.first_name}</span>
-                        <span className="text-[8px]">Bem vindo de volta</span>
-                    </div>
-                </div>
-                <div></div>
-            </header>
-
+           <Header/>
+    
                         {/* Saldo */}
 
             <section className="w-full h-[10%] flex justify-center items-center ">

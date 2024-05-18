@@ -54,7 +54,7 @@ export default function DepositComponent({deposit}:DepositProps) {
             <AlertDialogTrigger asChild>
                 <Button className="my-2">Realizar Deposito</Button>
             </AlertDialogTrigger>
-            <AlertDialogContent>
+            <AlertDialogContent className="">
                 <AlertDialogHeader>
                 <AlertDialogTitle>{deposit.userName},</AlertDialogTitle>
                 <AlertDialogDescription>

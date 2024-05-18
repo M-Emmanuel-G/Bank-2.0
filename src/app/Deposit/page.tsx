@@ -3,6 +3,7 @@ import DepositComponent from "../components/Deposit/Deposit";
 import { db } from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
+import Header from "../components/Header/header";
 
 export default async function Deposit() {
 
@@ -19,7 +20,9 @@ export default async function Deposit() {
 
     return (
         <main className="w-screen h-screen flex flex-col items-center bg-black">
-            <section className="w-full h-[90%] flex flex-col items-center">
+            <Header/>
+            <section className="w-full h-[80%] flex flex-col items-center">
+                <span className="text-xl my-8 text-white"> Realize depositos para sua propria conta!</span>
                 <DepositComponent
                     deposit={{
                         id: String(user?.accountBank[0].id),
