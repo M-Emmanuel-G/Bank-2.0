@@ -37,7 +37,7 @@ export default async function Profile() {
                     <Button className="my-2">Alterar Imagem</Button>
                     <EditProfile/>
                 </div>
-                <div className="w-80 h-96 flex flex-col overflow-y-scroll">
+                <div className="w-80 h-80 flex flex-col overflow-y-scroll">
                     <div className="w-full text-white flex flex-col my-2">
                         <strong>Nome completo:</strong>
                         <span>{session?.user.first_name} {session?.user.last_name}</span>

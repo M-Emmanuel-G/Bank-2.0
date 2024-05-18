@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 interface ClientProps{
-
+    
 }
   
 
@@ -33,7 +33,7 @@ export default function EditProfile() {
                 <AlertDialogTitle>Editar Perfil</AlertDialogTitle>
                 <AlertDialogDescription>
                     <input
-                        className="w-80 h-12 border-b-2 border-black text-sm outline-none"
+                        className="w-96 h-12 border-b-2 border-black text-sm outline-none"
                         value={userName}
                         onChange={(ev)=>{setUserName(ev.target.value)}}
                         placeholder="Noma de usuário"
@@ -41,8 +41,8 @@ export default function EditProfile() {
                 </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction>Continue</AlertDialogAction>
+                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                <AlertDialogAction>Confirmar</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
