@@ -645,6 +645,10 @@ video {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+  .mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
   .ml-8 {
   margin-left: 2rem;
 }
@@ -746,6 +750,9 @@ video {
 }
   .w-screen {
   width: 100vw;
+}
+  .w-12 {
+  width: 3rem;
 }
   .max-w-lg {
   max-width: 32rem;
@@ -989,6 +996,12 @@ video {
 }
   .underline-offset-4 {
   text-underline-offset: 4px;
+}
+  .accent-slate-600 {
+  accent-color: #475569;
+}
+  .accent-red-500 {
+  accent-color: #ef4444;
 }
   .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);

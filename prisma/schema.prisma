@@ -31,6 +31,7 @@ model Clients {
   income Decimal @db.Decimal(10,2)
   user_name String
   accountBank AccountBank []
+  creditCard CreditCard []
 }
 
 model AccountBank {
@@ -43,3 +44,12 @@ model AccountBank {
   client_id String
   client Clients @relation(fields: [client_id], references: [id])
 }
+
+model CreditCard{
+  id String @id @default(cuid())
+  client_id String
+  client Clients @relation(fields: [client_id], references: [id])
+
+}
+
+// Rodar npx prisma migrate para subir tabela CreditCart.
