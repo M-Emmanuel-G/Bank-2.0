@@ -30,4 +30,16 @@ model Clients {
   RG String @unique
   income Decimal @db.Decimal(10,2)
   user_name String
+  accountBank AccountBank []
+}
+
+model AccountBank {
+  id String @id @default(cuid())
+  cod_account String @unique
+  balance Decimal @db.Decimal(10,2)
+  account_type String
+  account_created String
+  account_status String
+  client_id String
+  client Clients @relation(fields: [client_id], references: [id])
 }

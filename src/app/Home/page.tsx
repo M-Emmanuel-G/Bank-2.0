@@ -14,7 +14,7 @@ export default async function Home() {
 
     const user = await db.clients.findUnique({
         select:{
-            income:true
+            accountBank:true
         },
         where:{
             id: session?.user.id
@@ -46,7 +46,7 @@ export default async function Home() {
                 <div className="w-96 h-3/4 bg-gray-900 flex justify-between items-center rounded-3xl">
                     <div className=" flex flex-col ml-8">
                         <span className="text-[12px]">Saldo</span>
-                        <span>****</span>
+                        <span>R$ {Number(user?.accountBank[0].balance).toFixed(2)}</span>
                     </div>
                     <div className="mr-6">
                         <EyeOff/>
