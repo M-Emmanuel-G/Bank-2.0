@@ -73,7 +73,7 @@ export default async function Home() {
                     <CardService
                         service="Transferéncias"
                         urlImage="https://utfs.io/f/dced5265-3be4-4ba7-9506-3059a5328699-l6lre3.png"
-                        path="/"
+                        path="/Transfer"
                     />
                 </div>
             </section>
