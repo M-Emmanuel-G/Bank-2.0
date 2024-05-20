@@ -41,11 +41,15 @@ export default function Home() {
             </div>
           </form>
         </section>
-        <section>
+        <section className='flex flex-col items-center'>
           <Button
           onClick={(()=>{signIn()})}
             className='w-[340px] h-12 bg-transparent text-black border-2 border-black rounded-xl hover:bg-transparent'
           >Entrar</Button>
+          <Button
+          onClick={(()=>{signIn()})}
+            className='w-[340px] h-12 bg-transparent text-black border-2 border-black rounded-xl hover:bg-transparent my-4'
+          >Registre-se</Button>
         </section>
       </main>
   )

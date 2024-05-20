@@ -1020,6 +1020,12 @@ video {
   .outline {
   outline-style: solid;
 }
+  .outline-transparent {
+  outline-color: transparent;
+}
+  .outline-red-600 {
+  outline-color: #dc2626;
+}
   .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
 }
@@ -1074,6 +1080,10 @@ video {
   color: hsl(var(--muted-foreground));
 }
 
+  .hover\:border-none:hover {
+  border-style: none;
+}
+
   .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
 }
@@ -1102,6 +1112,15 @@ video {
   text-decoration-line: underline;
 }
 
+  .focus\:no-underline:focus {
+  text-decoration-line: none;
+}
+
+  .focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
   .focus-visible\:outline-none:focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1119,6 +1138,14 @@ video {
 
   .focus-visible\:ring-offset-2:focus-visible {
   --tw-ring-offset-width: 2px;
+}
+
+  .active\:border-0:active {
+  border-width: 0px;
+}
+
+  .active\:border-none:active {
+  border-style: none;
 }
 
   .disabled\:pointer-events-none:disabled {

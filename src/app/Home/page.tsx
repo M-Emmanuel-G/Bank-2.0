@@ -55,7 +55,7 @@ export default async function Home() {
             </section>
             <section className="w-full h-[20%] flex justify-center items-center">
                 <div className="flex justify-center gap-4">
-                    <CardService
+                    {/* <CardService
                         service="PIX"
                         urlImage="https://utfs.io/f/d1d53c8f-5526-4070-8e65-e216271ff221-1pxb.jpg"
                         path="/"
@@ -64,7 +64,7 @@ export default async function Home() {
                         service="Pagamentos"
                         urlImage="https://utfs.io/f/6afc5f08-1d2e-4db8-a7e5-b9c494656fee-met11h.webp"
                         path="/"
-                    />
+                    /> */}
                     <CardService
                         service="Depositos"
                         urlImage="https://utfs.io/f/3ab80d4e-4887-4851-9d3f-9a1e4da0395e-jm03e7.jpg"
