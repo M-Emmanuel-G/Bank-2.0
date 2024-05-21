@@ -8,31 +8,42 @@ export const authOptions: AuthOptions = {
     name: "Credentials",
     credentials: {
       cpf: { label: "CPF", type: "text", placeholder: "Digite seu CPF" },
+      password: { label: "password", type: "password", placeholder: "Senha" },
     },
     async authorize(credentials, req) {
       // Add logic here to look up the user from the credentials supplied
+      try {
+       
+        const user = await db.clients.findUnique({
+          where:{
+            CPF: credentials?.cpf
+          }
+        })
 
-      const user = await db.clients.findUnique({
-        where:{
-          CPF: credentials?.cpf
+        if(!user) throw new Error("Cliente não encontrado!");
+        if(user.password !== credentials?.password) throw new Error("Senha inválida!");
+        
+        
+
+        if (user) {
+          return user
+        } else {
+          // If you return null then an error will be displayed advising the user to check their details.
+          return null
+  
+          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
-      })
-
-      if (user) {
-        return user
-      } else {
-        // If you return null then an error will be displayed advising the user to check their details.
-        return null
-
-        // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+        
+      } catch (error:any) {
+        throw new Error(error.message);
       }
     }
    })
   ],
 
-  // pages:{
-  //   signIn:"/Login"
-  // },
+  pages:{
+    signIn:"/Login"
+  },
   callbacks: {
     async redirect() {
       return "/Home"
