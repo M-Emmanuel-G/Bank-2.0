@@ -20,7 +20,7 @@ export default function NavBar() {
     }
 
     return (
-        <div className=" w-[387px] h-[45px] flex justify-evenly items-center bg-gray-800 rounded-3xl">
+        <div className=" w-[387px] h-[45px] flex justify-evenly items-center bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-3xl">
                 <Link href="/Home">
                    <HomeIcon
                     width={20}

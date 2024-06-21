@@ -20,6 +20,8 @@ export const authOptions: AuthOptions = {
           }
         })
 
+        if(!credentials?.cpf || !credentials.password) throw new Error("Todos os campos precisam ser preenchidos!");
+        
         if(!user) throw new Error("Cliente não encontrado!");
         if(user.password !== credentials?.password) throw new Error("Senha inválida!");
         
@@ -44,10 +46,9 @@ export const authOptions: AuthOptions = {
   pages:{
     signIn:"/Login"
   },
+
   callbacks: {
-    async redirect() {
-      return "/Home"
-    },
+
 
     session: async ({ session, token }) => {
       if (session?.user) {

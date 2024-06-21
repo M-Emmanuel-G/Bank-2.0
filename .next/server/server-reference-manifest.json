@@ -1,5 +1,14 @@
 {
-  "node": {},
+  "node": {
+    "1f9394ffaa5a89071502edf91eeb094d698ab20c": {
+      "workers": {
+        "app/Deposit/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FDeposit%2FActions%2Fdeposit.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/Deposit/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "2GFESxG50eU2cQahAWkoZV/2Z8IYFCpYad72KnKRSy0="
+  "encryptionKey": "PqnPwWgTxO7qmRkSMrA5gMlduJetxvMTSKfPKN+sr2A="
 }

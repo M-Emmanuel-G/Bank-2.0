@@ -1,5 +1,3 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { EyeOff } from "lucide-react";
 import CardService from "../components/CardService";
 import Image from "next/image";
 import NavBar from "../components/NavBar";
@@ -7,11 +5,14 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
 import Header from "../components/Header/header";
+import GetBalance from "../components/Home/Balance";
 
 
 export default async function Home() {
 
     const session = await getServerSession(authOptions)
+
+    
 
     const user = await db.clients.findUnique({
         select:{
@@ -25,19 +26,10 @@ export default async function Home() {
     return (
         <main className="w-screen h-screen flex flex-col text-white bg-black">
            <Header/>
-    
-                        {/* Saldo */}
-
             <section className="w-full h-[10%] flex justify-center items-center ">
-                <div className="w-96 h-3/4 bg-gray-900 flex justify-between items-center rounded-3xl">
-                    <div className=" flex flex-col ml-8">
-                        <span className="text-[12px]">Saldo</span>
-                        <span>R$ {Number(user?.accountBank[0].balance).toFixed(2)}</span>
-                    </div>
-                    <div className="mr-6">
-                        <EyeOff/>
-                    </div>
-                </div>
+               <GetBalance
+                balance={Number(user?.accountBank[0].balance)}
+               />
             </section>
 
                         {/* Promo-Divulgacao */}
@@ -69,11 +61,17 @@ export default async function Home() {
                         service="Depositos"
                         urlImage="https://utfs.io/f/3ab80d4e-4887-4851-9d3f-9a1e4da0395e-jm03e7.jpg"
                         path="/Deposit"
+                        
                     />
                     <CardService
                         service="Transferéncias"
                         urlImage="https://utfs.io/f/dced5265-3be4-4ba7-9506-3059a5328699-l6lre3.png"
                         path="/Transfer"
+                    />
+                    <CardService
+                        service="Extrato"
+                        urlImage="https://utfs.io/f/8db8eaf1-f1dd-4d46-8772-329e14e52f11-ll4vwf.webp"
+                        path="/Extract"
                     />
                 </div>
             </section>

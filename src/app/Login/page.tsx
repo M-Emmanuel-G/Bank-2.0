@@ -1,13 +1,13 @@
 "use client"
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ChevronRight, Eye } from "lucide-react";
+import { ChevronRight, Eye, EyeOff } from "lucide-react";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import LogoIcon from "../assets/LogoIcon.jpg"
+import LogoIcon from "../assets/IconLogo.png"
+import Link from "next/link";
 
 export default function Login() {
 
@@ -16,7 +16,7 @@ export default function Login() {
 
     const router = useRouter()
 
-    const login = (ev:React.FormEvent<HTMLFormElement>)=>{
+    const login = async (ev:React.FormEvent<HTMLFormElement>)=>{
         ev.preventDefault()
 
         try {
@@ -25,12 +25,33 @@ export default function Login() {
                 password
             }
     
-            signIn("credentials",{
+            const res = await signIn("credentials",{
+                redirect:false,
                 ...data,
-                callbackUrl:"/Home" 
             })
+
+            if(res?.error) throw new Error(res.error);
+
+            router.push("/Home")
+            
         } catch (error:any) {
             alert(error.message)
+        }
+    }
+
+    const showPassword = ()=>{
+        const pass = document.getElementById("pass") as HTMLInputElement
+        const eyeOff = document.getElementById("eyeOff") as any
+        const eye = document.getElementById("eye") as any
+
+        if(pass.type === "password"){
+            pass.type = "text"
+            eyeOff.style.display = 'none'
+            eye.style.display = 'flex'
+        }else{
+            pass.type = "password"
+            eyeOff.style.display = 'flex'
+            eye.style.display = 'none'
         }
     }
 
@@ -54,28 +75,30 @@ export default function Login() {
                             onChange={(ev)=>{setCpf(ev.target.value)}}
                             style={{outline:"none"}}
                             placeholder='CPF'
-                            className='outline-none p-0 border-0 border-white rounded-none w-80 h-8 text-white focus:outline-none bg-transparent border-b-2'
+                            className='outline-none p-0 border-0 border-purple-600 rounded-none w-72 h-8 text-white focus:outline-none bg-transparent border-b-2'
                             maxLength={11}
                         />
                     </div>
                     <div className='flex items-center my-8 border-0 border-b-2 border-black'>
                         <input
+                            id="pass"
                             type="password"
                             value={password}
                             onChange={(ev)=>{setPassword(ev.target.value)}}
                             placeholder='Senha'
-                            className='outline-none rounded-none w-80 h-8 p-0 border-0 border-transparent bg-transparent border-b-2 text-white border-white'
+                            className='outline-none rounded-none w-72 h-8 p-0 border-0 bg-transparent border-b-2 text-white border-purple-600'
                             maxLength={6}
                         />
-                        <Eye/>
+                        <EyeOff id="eyeOff" className="flex" onClick={showPassword} style={{color:"white"}}/>
+                        <Eye id="eye" className="hidden" onClick={showPassword} style={{color:"white"}}/>
                     </div>
-                        <div className=' w-80 flex items-center my-4 justify-end'>
-                        <span className='text-[10px]'>Esqueceu sua senha?</span>
-                        <ChevronRight width={10} height={10}/>
+                    <div className=' w-80 flex items-center my-4 justify-end right-4 relative bottom-6'>
+                        <Link href={"/RecoveryPass"} className='text-[10px] text-white'>Esqueceu sua senha?</Link>
+                        <ChevronRight style={{color:"white"}} width={10} height={10}/>
                     </div>
-                    <div className=" w-full flex flex-col">
-                        <Button className="w-80 h-10 my-2 text-xl hover:bg-cyan-600 bg-cyan-600">Entrar</Button>
-                        <Button type="button" onClick={()=>{router.push("/")}} className="w-80 h-10 my-2 text-xl bg-cyan-600 hover:bg-cyan-600">Voltar</Button>
+                    <div className=" w-full flex flex-col items-center">
+                        <Button className="w-72 h-10 my-2 text-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 ">Entrar </Button>
+                        <Button type="button" onClick={()=>{router.push("/")}} className="w-72 h-10 my-2 text-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:bg-gradient-to-r">Voltar</Button>
                     </div>
                 </form>
             </section>

@@ -3,17 +3,14 @@
 import MakeDeposit from "@/app/Deposit/Actions/deposit";
 import {
     AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
     AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Input from "../Input";
+import Button from "../Button";
+import { useRouter } from "next/navigation";
 
 interface DepositProps{
     deposit:{
@@ -25,8 +22,9 @@ interface DepositProps{
 export default function DepositComponent({deposit}:DepositProps) {
 
     const [value, setValue]  = useState<number>(0)
+    const router = useRouter()
 
-    const update = async ()=>{
+    const makeDeposit = async ()=>{
 
         try {
 
@@ -52,28 +50,28 @@ export default function DepositComponent({deposit}:DepositProps) {
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button className="my-2">Realizar Deposito</Button>
+                <Button
+                    buttonName="Realizar deposito"
+                />
             </AlertDialogTrigger>
-            <AlertDialogContent className="">
-                <AlertDialogHeader>
-                <AlertDialogTitle>{deposit.userName},</AlertDialogTitle>
-                <AlertDialogDescription>
-                    <strong>Valor para depositar: </strong>
-                    <input
-                        className="w-20 text-center h-12 text-sm outline-none mx-4"
-                        value={value}
-                        type="number"
-                        onChange={(ev)=>{setValue(Number(ev.target.value))}}
-                        placeholder="Valor do deposito"
-                    />
-                </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                <AlertDialogCancel>Cancelar</AlertDialogCancel>
-                <AlertDialogAction onClick={update}>Confirmar</AlertDialogAction>
-                </AlertDialogFooter>
+            <AlertDialogContent className="bg-black flex flex-col items-center">
+                <AlertDialogTitle className="text-white">{deposit.userName},</AlertDialogTitle>
+                <strong className="text-white ">Valor para depositar: </strong>
+                <Input 
+                    value={value}
+                    type="number"
+                    onChange={(ev)=>{setValue(Number(ev.target.value))}}
+                    placeholder="Valor do deposito"
+                />
+                <Button 
+                    buttonName="Cancelar"
+                    onClick={()=>{router.push("/Home")}}
+                />
+                <Button
+                    onClick={makeDeposit}
+                    buttonName="Confirmar"
+                />
             </AlertDialogContent>
         </AlertDialog>
-
     );
 }

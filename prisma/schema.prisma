@@ -31,7 +31,6 @@ model Clients {
   income Decimal @db.Decimal(10,2)
   user_name String
   accountBank AccountBank []
-  creditCard CreditCard []
 }
 
 model AccountBank {
@@ -42,13 +41,34 @@ model AccountBank {
   account_created String
   account_status String
   client_id String
+
   client Clients @relation(fields: [client_id], references: [id])
+  extract Extract[]
+  creditCard CreditCard[]
+}
+
+model Extract{
+  id String @id @default(cuid())
+  description String
+  date String
+  operation String
+  value Decimal @db.Decimal(10,2)
+  orderBy Int @default(autoincrement()) @unique
+
+  account_cod String
+  account AccountBank @relation(fields: [account_cod], references: [cod_account])
 }
 
 model CreditCard{
   id String @id @default(cuid())
-  client_id String
-  client Clients @relation(fields: [client_id], references: [id])
+  numberCard Decimal @db.Decimal(10,2) // numero do cartao
+  nameCard String // nome do cartao
+  codSeg Decimal @db.Decimal(10,2) // codigo seguranca
+  validadeCard String // validade do cartao
+  categoryCard String // tipo de cartao (prata, outro, platinum, black)
+
+  account_cod String
+  account AccountBank  @relation(fields: [account_cod], references: [cod_account])
 
 }
 

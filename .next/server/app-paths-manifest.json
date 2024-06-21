@@ -1,7 +1,6 @@
 {
-  "/not-found": "app/not-found.js",
+  "/Extract/page": "app/Extract/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/Home/page": "app/Home/page.js",
-  "/Login/page": "app/Login/page.js",
-  "/page": "app/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+  "/Deposit/page": "app/Deposit/page.js"
 }

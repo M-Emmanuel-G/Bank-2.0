@@ -39,7 +39,8 @@ export default async function Profile() {
                        <EditProfile
                             client={{
                                 id:String( user?.id),
-                                userName:String(user?.user_name)
+                                userName:String(user?.user_name),
+                                password:String(user?.password)
                             }}
                        />
                     </div>
