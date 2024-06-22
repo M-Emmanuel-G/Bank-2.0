@@ -1,6 +1,8 @@
 {
-  "/Extract/page": "app/Extract/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/Home/page": "app/Home/page.js",
-  "/Deposit/page": "app/Deposit/page.js"
+  "/Extract/page": "app/Extract/page.js",
+  "/Profile/page": "app/Profile/page.js",
+  "/CreditCard/page": "app/CreditCard/page.js",
+  "/Transfer/page": "app/Transfer/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
 }

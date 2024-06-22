@@ -58,4 +58,16 @@ export default abstract  class Services {
      return getClient?.accountBank[0].cod_account
    }
 
+   static CardCodSeg = async ()=>{
+
+      const codOne = Math.floor(Math.random() * 9)
+      const codTwo = Math.floor(Math.random() * 9)
+      const codThree = Math.floor(Math.random() * 9)
+
+      const code = `${codOne}${codTwo}${codThree}`
+
+      return Number(code) as number
+
+   }
+
 }

@@ -72,4 +72,8 @@ model CreditCard{
 
 }
 
-// Rodar npx prisma migrate para subir tabela CreditCart.
+// model TypeCreditCard{
+//   id String @id @default(cuid())
+//   category String @unique
+//   Card_id String
+// }

@@ -28,7 +28,7 @@ export default function NavBar() {
                     style={{color:"white"}}
                    />
                 </Link>
-                <Link href="Cards">
+                <Link href="CreditCard">
                     <CreditCard
                         width={20}
                         height={20}
