@@ -1,6 +1,8 @@
 "use server"
 
+import Services from "@/app/Services/Services"
 import { db } from "@/lib/prisma"
+import { revalidatePath } from "next/cache"
 
 export default async function SolicityCard(idClient:string) {
 
@@ -29,15 +31,16 @@ export default async function SolicityCard(idClient:string) {
         
         await db.creditCard.create({
             data:{
-                categoryCard:"Black",
+                categoryCard:"clxqfhtnu0000a5hl9f59w88b",
                 codSeg:770,
                 nameCard:`${getClient?.first_name} ${getClient?.last_name}`,
                 numberCard:12345678,
-                validadeCard:"10/12/2032",
+                validadeCard: Services.ValidatCard(),
                 account_cod:getClient?.accountBank[0].cod_account
             }
         })
 
+        revalidatePath("/CreditCard")
         return "Cartao solicitado com sucesso!"
 
     } catch (error:any) {

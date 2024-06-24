@@ -20,12 +20,6 @@ export default abstract  class Services {
 
     const uniqueCod = `${firstCod}-${secondCod}`
 
-    // const verifyCod = await db.accountBank.findUnique({
-    //     where:{
-    //         cod_account: uniqueCod
-    //     }
-    // })
-
     return uniqueCod
  }
 
@@ -66,7 +60,13 @@ export default abstract  class Services {
 
       const code = `${codOne}${codTwo}${codThree}`
 
-      return Number(code) as number
+      return Number(code)
+
+   }
+
+   static ValidatCard = ()=>{
+
+      return dayjs().add(5, "year").locale("pt-br").format("M/YYYY")
 
    }
 

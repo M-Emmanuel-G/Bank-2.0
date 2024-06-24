@@ -65,15 +65,19 @@ model CreditCard{
   nameCard String // nome do cartao
   codSeg Decimal @db.Decimal(10,2) // codigo seguranca
   validadeCard String // validade do cartao
-  categoryCard String // tipo de cartao (prata, outro, platinum, black)
 
-  account_cod String
+  account_cod String @unique
   account AccountBank  @relation(fields: [account_cod], references: [cod_account])
+
+  categoryCard String
+  typeCard TypeCreditCard  @relation(fields: [categoryCard], references: [id])
 
 }
 
-// model TypeCreditCard{
-//   id String @id @default(cuid())
-//   category String @unique
-//   Card_id String
-// }
+model TypeCreditCard{
+  id String @id @default(cuid())
+  category String 
+  CardLimit Int
+  Benefit String
+  CreditCard CreditCard[]
+}
