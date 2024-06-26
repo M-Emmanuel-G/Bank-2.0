@@ -20,7 +20,6 @@ import {
 import GetAccount from "@/app/Transfer/Actions/getAccount"
   
 
-
 export default function SendTransfer() {
 
     const [codAccount, setCodAccount] = useState<string>("")
@@ -72,8 +71,8 @@ export default function SendTransfer() {
                             />
                             <strong className="text-white ">Valor da transferência:</strong>
                             <Input
-                                // value={transfer}
-                                // onChange={((ev)=>{setTransfer(Number(ev.target.value))})}
+                                value={transfer}
+                                onChange={((ev)=>{setTransfer(Number(ev.target.value))})}
                                 type="number"
                             />
                         </div>

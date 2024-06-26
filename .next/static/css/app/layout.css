@@ -665,6 +665,10 @@ video {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+  .my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
   .ml-8 {
   margin-left: 2rem;
 }
@@ -1055,6 +1059,10 @@ video {
   .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+  .text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
   .font-medium {
   font-weight: 500;

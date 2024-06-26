@@ -12,7 +12,8 @@ export default async function Transfer() {
         <main className="w-screen h-screen flex flex-col items-center bg-black">
             <section className="w-full h-[90%] flex flex-col relative ">
                 <h2 className="text-2xl text-white text-center my-8">Transferencias</h2>
-                <section className="w-full h-full flex justify-center items-center">
+                <section className="w-full h-full flex justify-center items-center flex-col text-white">
+                    <span>Realize transferencias para outras contas!</span>
                     <SendTransfer/>
                 </section>
             </section>

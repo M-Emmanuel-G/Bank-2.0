@@ -61,7 +61,7 @@ model Extract{
 
 model CreditCard{
   id String @id @default(cuid())
-  numberCard Decimal @db.Decimal(10,2) // numero do cartao
+  numberCard Decimal @db.Decimal(18,2) // numero do cartao
   nameCard String // nome do cartao
   codSeg Decimal @db.Decimal(10,2) // codigo seguranca
   validadeCard String // validade do cartao
