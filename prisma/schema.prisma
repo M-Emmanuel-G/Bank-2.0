@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Clients {
+  id            String          @id @default(cuid())
+  name          String?
+  email         String          @unique
+  image         String?
+  password      String
+  first_name String
+  last_name String
+  birth_date String
+  full_address String
+  cod_postal String
+  phone String @unique
+  CPF String @unique
+  RG String @unique
+  income Decimal @db.Decimal(10,2)
+  user_name String
+  accountBank AccountBank []
+}
+
+model AccountBank {
+  id String @id @default(cuid())
+  cod_account String @unique
+  balance Decimal @db.Decimal(10,2)
+  account_type String
+  account_created String
+  account_status String
+  client_id String
+
+  client Clients @relation(fields: [client_id], references: [id])
+  extract Extract[]
+  creditCard CreditCard[]
+}
+
+model Extract{
+  id String @id @default(cuid())
+  description String
+  date String
+  operation String
+  value Decimal @db.Decimal(10,2)
+  orderBy Int @default(autoincrement()) @unique
+
+  account_cod String
+  account AccountBank @relation(fields: [account_cod], references: [cod_account])
+}
+
+model CreditCard{
+  id String @id @default(cuid())
+  numberCard Decimal @db.Decimal(18,2) // numero do cartao
+  nameCard String // nome do cartao
+  codSeg Decimal @db.Decimal(10,2) // codigo seguranca
+  validadeCard String // validade do cartao
+
+  account_cod String @unique
+  account AccountBank  @relation(fields: [account_cod], references: [cod_account])
+
+  categoryCard String
+  typeCard TypeCreditCard  @relation(fields: [categoryCard], references: [id])
+
+}
+
+model TypeCreditCard{
+  id String @id @default(cuid())
+  category String 
+  CardLimit Int
+  Benefit String
+  CreditCard CreditCard[]
+}

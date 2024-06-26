@@ -1,0 +1,8 @@
+{
+  "/Home/page": "app/Home/page.js",
+  "/Signup/page": "app/Signup/page.js",
+  "/RecoveryPass/page": "app/RecoveryPass/page.js",
+  "/Profile/page": "app/Profile/page.js",
+  "/CreditCard/page": "app/CreditCard/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+}
