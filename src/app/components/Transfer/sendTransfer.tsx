@@ -17,7 +17,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
-import GetAccount from "@/app/Transfer/Actions/getAccount"
+import Loading from "../Loading"
   
 
 export default function SendTransfer() {
@@ -29,6 +29,9 @@ export default function SendTransfer() {
 
     const sendTransfer = async ()=>{
         try {
+
+            const loader = document.getElementById("Loading") as HTMLElement
+            loader.style.display = "flex"
  
          if(!transfer) throw new Error("Valor da tranferência esta vazio");
          if(isNaN(transfer)) throw new Error("Somente numeros serão aceitos");
@@ -43,7 +46,8 @@ export default function SendTransfer() {
          )
              
          alert("Transferência realizada com sucesso!")
-         
+         loader.style.display = "none"
+
         } catch (error:any) {
          alert(error.message)
         }
@@ -51,10 +55,8 @@ export default function SendTransfer() {
 
     return (
         <AlertDialog >
-            <AlertDialogTrigger className="text-white">
-                <Button
-                    buttonName="Realizar transferência"
-                />
+            <AlertDialogTrigger className='w-72 h-10 my-4 text-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-xl flex items-center justify-center'>
+                Realizar Transferência
             </AlertDialogTrigger>
             <AlertDialogContent className="bg-black">
                 <AlertDialogHeader>
@@ -62,7 +64,7 @@ export default function SendTransfer() {
                 <AlertDialogDescription>
                     <div>
                         <div className="flex flex-col gap-4">
-                            <strong className="text-white">Numero da conta:</strong>
+                            <strong className="text-white">Número da conta:</strong>
                             <Input
                                 type="text"
                                 value={codAccount}
@@ -89,6 +91,7 @@ export default function SendTransfer() {
                 </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
+            <Loading/>
         </AlertDialog>
 
     );

@@ -15,12 +15,6 @@ import {
 import { TypeCreditCard } from "@prisma/client"
 import { useState } from "react"
 
-interface TypeCardProps{
-    idCard:string
-    idType:string
-    category:string
-}
-
 interface DataProps{
     idCard:string
     idType:string
@@ -32,6 +26,9 @@ interface DataProps{
 
     const upgradeCard = async ()=>{
         try {
+
+            const loader = document.getElementById("Loading") as HTMLElement
+            loader.style.display = "flex"
         
             const data:DataProps = {
                 idCard: params.idCard,
@@ -40,6 +37,8 @@ interface DataProps{
     
             const response = await UpdateCard(data)
             alert(response)
+
+            loader.style.display = "none"
             
         } catch (error:any) {
             alert(error.message)

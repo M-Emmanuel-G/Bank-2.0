@@ -11,6 +11,7 @@ import { useState } from "react";
 import Input from "../Input";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
+import { Loader } from "../Loader";
 
 interface DepositProps{
     deposit:{
@@ -27,6 +28,9 @@ export default function DepositComponent({deposit}:DepositProps) {
     const makeDeposit = async ()=>{
 
         try {
+            
+            const loader = document.getElementById("Loader") as HTMLElement
+            loader.style.display = "flex"
 
             if(!value) throw new Error("O valor nao foi inserido!");
             if(isNaN(value)) throw new Error("Serão aceito somente numeros!");
@@ -38,6 +42,7 @@ export default function DepositComponent({deposit}:DepositProps) {
             }
 
             await MakeDeposit({deposit:data})
+
 
             alert("O valor foi depositado com sucesso!")
 
@@ -71,6 +76,7 @@ export default function DepositComponent({deposit}:DepositProps) {
                     onClick={makeDeposit}
                     buttonName="Confirmar"
                 />
+                <Loader/>
             </AlertDialogContent>
         </AlertDialog>
     );

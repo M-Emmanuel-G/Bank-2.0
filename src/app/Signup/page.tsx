@@ -27,6 +27,7 @@ export default function Signup() {
 
     const signUp = async(ev:any) => {
         ev.preventDefault();
+        const loader = document.getElementById("Loader") as HTMLElement
         try {
             if(!firstName || !lastName || !BirthDate || !fullAddress || !codPostal || !phone || !cpf || !rg || !income || !userName || !email || !pass || !confirmPass) throw new Error("Todos os campos precisam ser preenchidos!");
             if(!email.includes("@") || !email.includes(".com")) throw new Error("Formato de email inválido!");
@@ -72,6 +73,7 @@ export default function Signup() {
             )
             
             alert("Usuario criado com sucesso!")
+            loader.style.display = "flex"
             router.push("/")
             
             

@@ -1,46 +1,46 @@
 {
   "node": {
-    "56a54a28a95d23b183c72670e6a7e5d445dffda1": {
+    "1e982ab8d156f90e8c5eeec4da2178367437c373": {
       "workers": {
-        "app/Signup/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FSignup%2FActions%2Fsignup.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+        "app/Signup/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CEmmanuelX%5C%5CDesktop%5C%5CGITHUB%5C%5CBank-2.0%5C%5Csrc%5C%5Capp%5C%5CSignup%5C%5CActions%5C%5Csignup.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/Signup/page": "action-browser"
       }
     },
-    "f63a69d12b0d49022c22429d4d4185c0f17c74f3": {
+    "9af2001ec990c3da5d3081a8cfa164091580cc9f": {
       "workers": {
-        "app/RecoveryPass/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FRecoveryPass%2FActions%2FrecPass.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+        "app/Deposit/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CEmmanuelX%5C%5CDesktop%5C%5CGITHUB%5C%5CBank-2.0%5C%5Csrc%5C%5Capp%5C%5CDeposit%5C%5CActions%5C%5Cdeposit.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/RecoveryPass/page": "action-browser"
+        "app/Deposit/page": "action-browser"
       }
     },
-    "e137b79e15f5f34a5b3fed6f3fbc8ce1e7620af9": {
+    "00df87816f266e34c12a1f6ccac84b6e03003693": {
       "workers": {
-        "app/Profile/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FProfile%2Factions%2FupdateProfile.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/Profile/page": "action-browser"
-      }
-    },
-    "0f945063e74833f7b1cb24f51164b3b82418a142": {
-      "workers": {
-        "app/CreditCard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FCreditCard%2FActions%2FSolicityCard.tsx%22%2C%5B%22default%22%5D%5D%2C%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FCreditCard%2FActions%2FUpdateCard.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+        "app/CreditCard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CEmmanuelX%5C%5CDesktop%5C%5CGITHUB%5C%5CBank-2.0%5C%5Csrc%5C%5Capp%5C%5CCreditCard%5C%5CActions%5C%5CSolicityCard.tsx%22%2C%5B%22default%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CEmmanuelX%5C%5CDesktop%5C%5CGITHUB%5C%5CBank-2.0%5C%5Csrc%5C%5Capp%5C%5CCreditCard%5C%5CActions%5C%5CUpdateCard.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/CreditCard/page": "action-browser"
       }
     },
-    "d113d8d5121dd08927c1a59cee749dfc1775abf2": {
+    "e66b6c88833188e7ab7304182c8e6616d52f5c01": {
       "workers": {
-        "app/CreditCard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FCreditCard%2FActions%2FSolicityCard.tsx%22%2C%5B%22default%22%5D%5D%2C%5B%22%2FUsers%2Femannuel%2FDocuments%2FProjetinhos%2FGitHub%2FBank-2.0%2Fsrc%2Fapp%2FCreditCard%2FActions%2FUpdateCard.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+        "app/CreditCard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CEmmanuelX%5C%5CDesktop%5C%5CGITHUB%5C%5CBank-2.0%5C%5Csrc%5C%5Capp%5C%5CCreditCard%5C%5CActions%5C%5CSolicityCard.tsx%22%2C%5B%22default%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CEmmanuelX%5C%5CDesktop%5C%5CGITHUB%5C%5CBank-2.0%5C%5Csrc%5C%5Capp%5C%5CCreditCard%5C%5CActions%5C%5CUpdateCard.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/CreditCard/page": "action-browser"
+      }
+    },
+    "27743848c94c357bb9c3bffddb581420bfa20286": {
+      "workers": {
+        "app/Transfer/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CEmmanuelX%5C%5CDesktop%5C%5CGITHUB%5C%5CBank-2.0%5C%5Csrc%5C%5Capp%5C%5CTransfer%5C%5CActions%5C%5Ctransfer.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/Transfer/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "AIQsj8Q2eUnpwlrRcs52ONRbOo3R2UfbMFnGSQkoDwE="
+  "encryptionKey": "I3GyxUkAUyw3V8ZeN0Zb5eSYd1cmdLG1zG8GHnMn/Gw="
 }
