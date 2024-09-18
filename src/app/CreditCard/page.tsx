@@ -7,6 +7,7 @@ import { authOptions } from "@/lib/auth";
 import Button from "../components/Button";
 import UpdateCardCredit from "../components/CreditCard/updateCard";
 import { TypeCreditCard } from "@prisma/client";
+import Loading from "../components/Loading";
 
 export default async function CreditCard() {
 
@@ -75,7 +76,7 @@ export default async function CreditCard() {
             </section>
             <section className="w-96 h-[65%] flex flex-col items-center mt-8">
                 <div className="w-full text-center text-white">
-                    <h2 className="text-xl">Informacoes do cartao!</h2>
+                    <h2 className="text-xl my-4">Informacoes do cartao!</h2>
                     <div className="w-full flex justify-between my-2">
                         <strong className="text-[12px]">Cartao:</strong>
                         <span className="text-[12px]">{getMyCard?.typeCard.category}</span>
@@ -101,6 +102,7 @@ export default async function CreditCard() {
                 </div>
             </section>
             <NavBar/>
+            <Loading/>
         </main>
     );
 }

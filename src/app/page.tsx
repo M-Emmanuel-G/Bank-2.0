@@ -1,16 +1,31 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import LogoIcon from "../app/assets/IconLogo.png"
 import { signIn } from 'next-auth/react'
 import Link from 'next/link'
+import Button from './components/Button'
+import { Loader } from './components/Loader'
+import Loading from './components/Loading'
 
 export default function Home() {
 
   const router = useRouter()
+  
+  const goToSignup = ()=>{
+ 
+    const loader = document.getElementById("Loading") as HTMLElement
+    loader.style.display = "flex"
+    router.push("/Signup")
+ 
+  }
 
+  const goToLogin = ()=>{
+    const loader = document.getElementById("Loading") as HTMLElement
+    loader.style.display = "flex"
+    signIn()
+  }
   
 
   return (
@@ -23,9 +38,16 @@ export default function Home() {
           <span className='text-white text-center text-sm my-4'>Bem vindo ao banco digital que simplifica sua vida. Um banco digital feito para atender suas necessidades!</span>
         </section>
         <section className=' w-96 items-center flex flex-col'>
-          <Button className='w-64 h-10 my-4 bg-gradient-to-r from-fuchsia-600 to-purple-600 text-xl' onClick={()=>{signIn()}}>Acesse sua conta</Button>
-          <Button className='w-64 h-10 my-4 bg-gradient-to-r from-fuchsia-600 to-purple-600 text-xl' onClick={()=>{router.push("/Signup")}}>Crie sua conta</Button>
+          <Button
+            buttonName='Acesse sua conta'
+            onClick={goToLogin}
+            />
+          <Button 
+            buttonName='Crie sua conta' 
+            onClick={goToSignup}
+            />
         </section>
+        <Loading/>
       </main>
   )
 }

@@ -8,18 +8,22 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import LogoIcon from "../assets/IconLogo.png"
 import Link from "next/link";
+import { Loader } from "../components/Loader";
+import Loading from "../components/Loading";
 
 export default function Login() {
 
     const [cpf, setCpf] = useState<string>("")
     const [password, setPassword] = useState<string>("")
 
+    
     const router = useRouter()
-
+    
     const login = async (ev:React.FormEvent<HTMLFormElement>)=>{
-        ev.preventDefault()
-
         try {
+        ev.preventDefault()
+        const loader = document.getElementById("Loading") as HTMLElement
+
             const data = {
                 cpf,
                 password
@@ -31,7 +35,7 @@ export default function Login() {
             })
 
             if(res?.error) throw new Error(res.error);
-
+            loader.style.display = "flex"
             router.push("/Home")
             
         } catch (error:any) {
@@ -55,9 +59,16 @@ export default function Login() {
         }
     }
 
+    const goToBack = ()=>{
+        const loader = document.getElementById("Loading") as HTMLElement
+        loader.style.display = "flex"
+        
+        router.push("/")
+    }
+
     return (
         <main className="w-screen h-screen flex flex-col items-center justify-center bg-black">
-            <section>
+            <section className="flex flex-col justify-center items-center">
                 <form onSubmit={login}>
                     <div className="flex justify-center">
                     <Image
@@ -98,10 +109,11 @@ export default function Login() {
                     </div>
                     <div className=" w-full flex flex-col items-center">
                         <Button className="w-72 h-10 my-2 text-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 ">Entrar </Button>
-                        <Button type="button" onClick={()=>{router.push("/")}} className="w-72 h-10 my-2 text-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:bg-gradient-to-r">Voltar</Button>
+                        <Button type="button" onClick={goToBack} className="w-72 h-10 my-2 text-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:bg-gradient-to-r">Voltar</Button>
                     </div>
                 </form>
             </section>
+            <Loading/>
         </main>
     );
 }

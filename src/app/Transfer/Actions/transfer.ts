@@ -13,6 +13,8 @@ interface TransferProps{
 export default async function makeTransfer({codAccount, transfer, codAccountUser}:TransferProps) {
 
   try {
+    // const loader = document.getElementById("Loading") as HTMLElement
+    // loader.style.display = "none"
 
       // Cliente para transferir
 
@@ -36,8 +38,12 @@ export default async function makeTransfer({codAccount, transfer, codAccountUser
         }
     })
 
-    if(client === null) throw new Error("Cliente não encontrado!");
-    if(transfer > Number(client?.balance)) throw new Error("Saldo indisponível");
+    if(client === null) {
+        throw new Error("Cliente não encontrado!")
+    }
+    if(transfer > Number(client?.balance)){
+        throw new Error("Saldo indisponível");
+    } 
     
 
     // Atualizacao Cliente

@@ -4,6 +4,7 @@ import { db } from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import Header from "../components/Header/header";
+import Loading from "../components/Loading";
 
 export default async function Deposit() {
 
@@ -32,6 +33,7 @@ export default async function Deposit() {
                 />
             </section>
             <NavBar/>
+            <Loading/>
         </main>
     );
 }

@@ -45,10 +45,11 @@ export default async function MakeDeposit({deposit}:DepositProps){
         })
 
         revalidatePath("/Extract")
-        revalidatePath("/Home")
-
+        
     } catch (error:any) {
         throw new Error(error.message);
         
     }
 }
+
+redirect("/Home")

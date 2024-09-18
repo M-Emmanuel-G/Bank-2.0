@@ -12,7 +12,6 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
   
 
@@ -22,8 +21,13 @@ export default function NewCardCredit() {
 
     const newCard = async ()=>{
         try {
+            
+            const loader = document.getElementById("Loading") as HTMLElement
+            loader.style.display = "flex"
+            
             const result = await SolicityCard(session.data?.user.id as string)
             alert(result)
+        
         } catch (error:any) {
             alert(error.message)
         }

@@ -11,6 +11,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/Signup/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/Signup/page.js"
+    ],
     "/Login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -21,25 +26,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/Home/page.js"
     ],
-    "/Signup/page": [
+    "/Deposit/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/Signup/page.js"
+      "static/chunks/app/Deposit/page.js"
     ],
-    "/RecoveryPass/page": [
+    "/Extract/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/RecoveryPass/page.js"
-    ],
-    "/Profile/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/Profile/page.js"
+      "static/chunks/app/Extract/page.js"
     ],
     "/CreditCard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/CreditCard/page.js"
+    ],
+    "/Transfer/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/Transfer/page.js"
     ]
   }
 }
